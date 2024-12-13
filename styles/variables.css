@@ -2,3 +2,15 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  --color-page: rgba(0, 0, 40, 1);
+  --color-them: rgba(255, 0, 112, 1);
+  --color-outline-hover: rgba(255, 0, 112, 0.4);
+  --color-rec: rgba(255, 0, 112, 1);
+  --color-light_bulb: rgba(255, 0, 112, 1);
+  --color-big-headlines: #DB00FF;
+  --color-big-headlines-shadow: rgba(255, 0, 112, 1);
+  --color-title: rgba(0, 0, 40, 1);
+  --background-color-title: rgba(255, 0, 112, 1);
+  --color-footnote: rgba(255, 0, 112, 1);
+}
