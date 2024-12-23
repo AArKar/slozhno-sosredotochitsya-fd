@@ -5,6 +5,7 @@
 */
 
 :root.theme-light {
+  --background-image: url(../images/cover-image-light.png);
   --color-page: rgba(255, 241, 247, 1);
   --color-them: rgba(53, 52, 48, 1);
   --color-outline-hover: rgba(50, 49, 45, 0.4);
@@ -12,11 +13,24 @@
   --color-big-headlines-shadow: rgba(255, 141, 203, 1);
   --color-title: rgba(53, 52, 48, 1);
   --background-color-title: rgba(255, 141, 203, 1);
+  --color-theme_main: rgba(53, 52, 48, 1);
+  --color-main_text: rgba(53, 52, 48, 1);
+  --color-title-tips: rgba(53, 52, 48, 1);
+  --background-color-title-tips: rgba(255, 141, 203, 1);
   --color-footnote: rgba(255, 0, 112, 1);
+}
+
+.theme-light .page {
+  background-image: var(--background-image);
+}
+
+.theme-light .page .header__rec {
+  display: none;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
+    --background-image: url(../images/cover-image-light.png);
     --color-page: rgba(255, 241, 247, 1);
     --color-them: rgba(53, 52, 48, 1);
     --color-outline-hover: rgba(50, 49, 45, 0.4);
@@ -24,10 +38,18 @@
     --color-big-headlines-shadow: rgba(255, 141, 203, 1);
     --color-title: rgba(53, 52, 48, 1);
     --background-color-title: rgba(255, 141, 203, 1);
-    --color-footnote: rgba(255, 0, 112, 1);  
+    --color-theme_main: rgba(53, 52, 48, 1);
+    --color-main_text: rgba(53, 52, 48, 1);
+    --color-title-tips: rgba(53, 52, 48, 1);
+    --background-color-title-tips: rgba(255, 141, 203, 1);
+    --color-footnote: rgba(255, 0, 112, 1);
   }
-}
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+  .page {
+    background-image: var(--background-image);
+  }
+
+  .header__rec { 
+    display: none; 
+  }
 }

@@ -4,18 +4,71 @@
   переключая тему
 */
 :root.theme-dark {
+  --background-image: url(../images/cover-image-dark.png);
   --color-page: rgba(0, 0, 40, 1);
   --color-them: rgba(255, 0, 112, 1);
   --color-outline-hover: rgba(255, 0, 112, 0.4);
   --color-rec: rgba(255, 0, 112, 1);
   --color-light_bulb: rgba(255, 0, 112, 1);
-  --color-big-headlines: #DB00FF;
+  --color-big-headlines: rgba(219, 0, 255, 1);
   --color-big-headlines-shadow: rgba(255, 0, 112, 1);
   --color-title: rgba(0, 0, 40, 1);
   --background-color-title: rgba(255, 0, 112, 1);
+  --color-theme_main: rgba(255, 0, 112, 1);
+  --color-main_text: rgba(241, 178, 206, 1);
+  --color-title-tips: rgba(0, 0, 40, 1);
+  --background-color-title-tips: rgba(255, 0, 112, 1);
   --color-footnote: rgba(53, 52, 48, 1);
 }
 
+.theme-dark .page .header__rec {
+  display: flex;
+  width: 50px;
+  height: 26px;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+  color: var(--color-rec);
+}
+
 .theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+  background-image: var(--background-image );
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-image: url(../images/cover-image-dark.png);
+    --color-page: rgba(0, 0, 40, 1);
+    --color-them: rgba(255, 0, 112, 1);
+    --color-outline-hover: rgba(255, 0, 112, 0.4);
+    --color-rec: rgba(255, 0, 112, 1);
+    --color-light_bulb: rgba(255, 0, 112, 1);
+    --color-big-headlines: rgba(219, 0, 255, 1);
+    --color-big-headlines-shadow: rgba(255, 0, 112, 1);
+    --color-title: rgba(0, 0, 40, 1);
+    --background-color-title: rgba(255, 0, 112, 1);
+    --color-theme_main: rgba(255, 0, 112, 1);
+    --color-main_text: rgba(241, 178, 206, 1);
+    --color-title-tips: rgba(0, 0, 40, 1);
+    --background-color-title-tips: rgba(255, 0, 112, 1);
+    --color-footnote: rgba(53, 52, 48, 1);  
+  }
+
+  .page {
+    background-image: url(../images/cover-image-dark.png);
+  }
+
+  .header__rec {
+    display: flex;
+    width: 50px;
+    height: 26px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    color: var(--color-rec);
+  }
 }
