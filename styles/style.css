@@ -198,10 +198,6 @@
   color: var(--color-theme_main);
 }
 
-.hard_concentrate_answer {
-
-}
-
 .main_text {
   font-family: 'IBM Plex Mono', sans-serif;
   font-size: 18px;
@@ -248,10 +244,6 @@
   gap: var(--decreased_concentration_answer-gap);
 }
 
-.decreased_concentration_answer_item {
- 
-}
-
 /* секция с советами по концетрации */
 
 .how_concentrate {
@@ -262,7 +254,7 @@
 }
 
 .how_concentrate_answer .title-caption,
-.gallery  .title-caption{
+.gallery  .title-caption {
   margin-bottom: 20px;
 }
 
@@ -331,7 +323,6 @@
 .gallery__item:nth-child(5) {
   grid-column: 2 / 4;
   grid-row: 3 / 4;
-
 }
 
 /*подвал*/
@@ -391,7 +382,7 @@ h6 .big_headlines {
 }
 
 @media (width <= 375px) {
-  .header_rec_theme{
+  .header_rec_theme {
     grid-template-rows: 1fr 3fr;
   }
 
@@ -413,17 +404,13 @@ h6 .big_headlines {
     margin-top: 35px;
   }
 
-  .decreased_concentration_answer {
-    inline-size: 375px;
-    padding-right: 20px;
-  }
-
   .how_concentrate {
     grid-template-columns: 1fr;
   }
 
   .how_concentrate .theme_main,
-  .how_concentrate_answer {
+  .how_concentrate_answer,
+  .decreased_concentration_answer {
     inline-size: 375px;
     padding-right: 20px;
   }
