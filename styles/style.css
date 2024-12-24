@@ -2,7 +2,7 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  width: 1024px;
+  width: var(--page-width);
   margin: auto;
   background-color: var(--color-page);
   background-repeat: no-repeat;
@@ -14,11 +14,11 @@
 /*header*/
 .header {
   display: grid;
-  block-size: 768px;
+  block-size: var(--header-block-size);
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 2fr 1fr 2fr;
-  padding: 20px 20px 0 0;
-  margin-bottom: 60px;
+  padding: var(--header-padding);
+  margin-bottom: var(--header-margin-bottom);
 }
 
 /*темы*/
@@ -31,8 +31,8 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  top: 20px;
-  right: 20px;
+  top: var(--decorated-zone-before-top);
+  right: var(--decorated-zone-before-right);
   border-top: 1px solid var(--color-them);
   border-right: 1px solid var(--color-them);
   padding: 20px 20px 0 0;
@@ -43,17 +43,22 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  top: 723px;
-  left: 20px;
+  top: var(--decorated-zone-after-top);
+  left: var(--decorated-zone-before-right);
   border-bottom: 1px solid var(--color-them);
   border-left: 1px solid var(--color-them);
 }
 
-.header__theme-menu {
-  grid-column: 2 / 4;
+.header_rec_theme {
+  grid-column: 2 / 5;
   display: grid;
-  justify-content: center;
-  margin-left: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.header__theme-menu {
+  display: grid;
+  justify-content: end;
+  margin-top: var(--header__theme-menu-margin-top);
 }
 
 .header__theme-menu-list {
@@ -96,7 +101,6 @@
 /*rec с лампочкой*/
 
 .header__rec_col {
-  grid-column: 4 / 5;
   display: grid;
   justify-content: end;
   padding-right: 10px;
@@ -137,11 +141,12 @@
 
 .big_headlines {
   font-family: 'IBM Plex Mono', sans-serif;
-  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
-  line-height: 129.53px;
+  font-size: var(--big_headlines-font-size);
+  line-height: var(--big_headlines-line-height);
   color: var(--color-big-headlines);
   text-shadow: 4px 4px 0px var(--color-big-headlines-shadow);
   grid-column: 1 / 5;
+  display: grid;
 }
 
 
@@ -152,12 +157,12 @@
   display: grid;
   justify-content: end;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: var(--header_title_main-m-b);
 }
 
 .header_title {
-  width: 491px;
-  height: 71px;
+  inline-size: var(--header_title-inline);
+  block-size: var(--header_title-block);
 }
 
 .title-caption {
@@ -174,16 +179,16 @@
 
 .main {
   display: grid;
-  gap: 80px;
-  margin-bottom: 60px;
+  gap: var(--main-gap);
+  margin-bottom: var(--main-margin-bottom);
 }
 
 /* секция про сложность сосредоточиться */
 .hard_concentrate {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  padding: 0 20px;
-  gap: 10px;
+  padding: var(--padding-main);
+  gap: var(--hard_concentrate-gap);
 }
 
 .theme_main {
@@ -225,7 +230,7 @@
 .decreased_concentration {
   display: grid;
   gap: 20px;
-  padding: 0 20px;
+  padding: var(--padding-main);
 }
 
 .heading_theme {
@@ -240,7 +245,7 @@
 .decreased_concentration_answer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: var(--decreased_concentration_answer-gap);
 }
 
 .decreased_concentration_answer_item {
@@ -252,8 +257,8 @@
 .how_concentrate {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 12px;
-  padding: 0 20px;
+  gap: var(--how_concentrate-gap);
+  padding: var(--padding-main);
 }
 
 .how_concentrate_answer .title-caption,
@@ -279,16 +284,15 @@
 
 .gallery {
   display: grid;
-  padding: 0 20px;
+  padding: var(--padding-main);
 }
 
 .img {
   display: grid;
   grid-template-columns: repeat(2, 1fr) 314px;
   grid-template-rows: 260px 315px 433px;
-  gap: 20px;
+  gap: var(--img-gap);
   box-sizing: border-box;
-  min-block-size: calc(100vh - 5em);
   grid-auto-flow: dense;
 }
 
@@ -334,7 +338,7 @@
 
 .footer {
   width: 100%;
-  height: 768px;
+  block-size: var(--header-block-size);
   display: grid;
   justify-content: center;
   align-items: center;
@@ -347,10 +351,125 @@ h6 .big_headlines {
 
 @media (width <= 768px) {
 
+  .header__theme-menu-list {
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .header_rec_theme {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+  }
+  
+  .header__theme-menu {
+    grid-row: 2 / 3;
+  }
+
+  .big_headlines {
+    align-items: center;
+    padding-bottom: 10px;
+  }
+
+  .heading_theme {
+    grid-template-columns: 1fr 3fr;
+  }
+  
+  .decreased_concentration_answer {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .img {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 190px 230px 320px;
+  }
+
+  h6 .big_headlines {
+    text-align: center;
+  }
+  
 }
 
 @media (width <= 375px) {
+  .header_rec_theme{
+    grid-template-rows: 1fr 3fr;
+  }
+
   .big_headlines {
-    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    padding-bottom: 0;
+    padding-top: 5px;
+  }
+
+  .hard_concentrate {
+    grid-template-columns: 1fr;
+    inline-size: 375px;
+  }
+
+  .theme_main {
+    inline-size: 300px;
+  }
+
+  .header_title .title-caption {
+    margin-top: 35px;
+  }
+
+  .decreased_concentration_answer {
+    inline-size: 375px;
+    padding-right: 20px;
+  }
+
+  .how_concentrate {
+    grid-template-columns: 1fr;
+  }
+
+  .how_concentrate .theme_main,
+  .how_concentrate_answer {
+    inline-size: 375px;
+    padding-right: 20px;
+  }
+
+  .how_concentrate {
+    gap: 18px;
+  }
+  
+  .gallery {
+    inline-size: 375px;
+  }
+
+  .gallery .title-caption {
+    margin-bottom: 10px;
+  }
+
+  .img {
+    grid-template-columns: 1fr;
+    grid-template-rows: 142px 355px 237px 355px 237px;
+  }
+
+  .gallery__item:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  
+  .gallery__item:nth-child(2) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  
+  .gallery__item:nth-child(3) {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .gallery__item:nth-child(4) {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+  
+  .gallery__item:nth-child(5) {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+  }
+  .page .header__rec {
+    margin-top: 3px;
   }
 }
