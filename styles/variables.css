@@ -18,6 +18,7 @@
   --background-color-title-tips: rgba(255, 0, 112, 1);
   --color-footnote: rgba(255, 0, 112, 1);
 
+  --font-size: 18px;
   --page-width: 1024px;
   --header-block-size: 768px;
   --decorated-zone-after-top: 723px;
@@ -63,14 +64,14 @@
     --header_title-block: 117px;
     --big_headlines-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     --header-padding: 10px 10px 0 10px;
-    --decorated-zone-before-top: 15px;
+    --decorated-zone-before-top: 10px;
     --decorated-zone-before-right: 10px;
-    --header-margin-bottom: 45px;
+    --header-margin-bottom: 40px;
     --padding-main: 0 10px;
     --main-gap: 50px;
     --img-gap: 10px;
     --main-margin-bottom: 35px;
-    --header__theme-menu-margin-top: 11px;
+    --header__theme-menu-margin-top: 8px;
     --big_headlines-line-height: 95.7px;
   }
 }
