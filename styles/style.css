@@ -360,6 +360,10 @@ h6 .big_headlines {
     inline-size: 375px;
   }
 
+  .heading_theme_main {
+    grid-template-columns: 1fr;
+  }
+
   .header__theme-menu {
     margin-top: 0px;
   }
