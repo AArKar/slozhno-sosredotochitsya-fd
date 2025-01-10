@@ -20,8 +20,7 @@
 
   --font-size: 18px;
   --page-width: 1024px;
-  --header-block-size: 768px;
-  --decorated-zone-after-top: 723px;
+  --header-block-size: 100vh;
   --header-title-inline: 491px;
   --header-title-block: 71px;
   --big-headlines-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -32,6 +31,7 @@
   --header-padding: 20px 20px 0 0;
   --decorated-zone-before-top: 20px;
   --decorated-zone-before-right: 20px;
+  --decorated-zone-after-top: calc(100vh - 40px);
   --header-margin-bottom: 60px;
   --padding-main: 0 20px;
   --main-gap: 80px;
@@ -44,7 +44,7 @@
 @media (width <= 768px) {
   :root {
     --page-width: 768px;
-    --header-block-size: 1024px;
+
     --decorated-zone-after-top: 980px;
     --header-title-inline: 364px;
     --header-title-block: 117px;

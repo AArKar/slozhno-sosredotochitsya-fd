@@ -2,7 +2,7 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  width: var(--page-width);
+  max-width: var(--page-width);
   margin: auto;
   background-color: var(--color-page);
   background-repeat: no-repeat;
@@ -14,7 +14,8 @@
 /*header*/
 .header {
   display: grid;
-  block-size: var(--header-block-size);
+  /*height: var(--height-header);*/
+  height: var(--header-block-size);
   grid-template-columns: 1fr min-content;
   grid-template-rows: 2fr 1fr 2fr;
   padding: var(--header-padding);
@@ -143,7 +144,7 @@
   grid-column: 2 / 3;
   margin-top: 95px;
   inline-size: var(--header-title-inline);
-  block-size: var(--header-title-block);
+  block-size: fit-content;
 }
 
 .title-caption {
@@ -303,7 +304,7 @@
   align-items: center;
 }
 
-h6 .big_headlines {
+h5.big_headlines {
   text-shadow: 2px 2px 0px var(--color-big-headlines-shadow);
   text-align: center;
 }
@@ -346,6 +347,10 @@ h6 .big_headlines {
 }
 
 @media (width <= 375px) {
+
+  .header {
+    min-block-size: var(--height-header);
+  }
 
   .footer .big_headlines {
     padding-top: 20px;
