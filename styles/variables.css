@@ -18,7 +18,7 @@
   --background-color-title-tips: rgba(255, 0, 112, 1);
   --color-footnote: rgba(255, 0, 112, 1);
 
-  --font-size: 18px;
+  --font-size: clamp(16px, 4vw, 18px);
   --page-width: 1024px;
   --header-block-size: 100vh;
   --header-title-inline: 491px;
@@ -43,9 +43,7 @@
 
 @media (width <= 768px) {
   :root {
-    --page-width: 768px;
-
-    --decorated-zone-after-top: 980px;
+    --page-width: 100vh;
     --header-title-inline: 364px;
     --header-title-block: 117px;
     --header-title_main-m-b: 80px;
@@ -59,13 +57,13 @@
   :root {
     --page-width: 375px;
     --header-block-size: 668px;
-    --decorated-zone-after-top: 638px;
     --header-title-inline: 355px;
     --header-title-block: 117px;
     --big-headlines-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     --header-padding: 10px 10px 0 10px;
     --decorated-zone-before-top: 10px;
     --decorated-zone-before-right: 10px;
+    --decorated-zone-after-top: calc(668px - 40px);
     --header-margin-bottom: 40px;
     --padding-main: 0 10px;
     --main-gap: 50px;
