@@ -55,6 +55,7 @@
 
 @media (width <= 375px) {
   :root {
+    --font-size: 18px;
     --page-width: 375px;
     --header-block-size: 668px;
     --header-title-inline: 355px;
