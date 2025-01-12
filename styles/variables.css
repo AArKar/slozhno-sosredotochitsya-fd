@@ -31,7 +31,7 @@
   --header-padding: 20px 20px 0 0;
   --decorated-zone-before-top: 20px;
   --decorated-zone-before-right: 20px;
-  --decorated-zone-after-top: calc(100vh - 40px);
+  --decorated-zone-after-top: calc(100% - 40px);
   --header-margin-bottom: 60px;
   --padding-main: 0 20px;
   --main-gap: 80px;
@@ -50,6 +50,12 @@
     --hard-concentrate-gap: 20px;
     --how-concentrate-gap: 23px;
     --header-theme-menu-margin-top: 40px;
+  }
+}
+
+@media (width < 415px) {
+  :root {
+    --header-title-inline: calc(100vw - 50px);
   }
 }
 
@@ -74,4 +80,3 @@
     --big-headlines-line-height: 95.7px;
   }
 }
-
